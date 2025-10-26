@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Boshlash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container quiz">
+    <header>
+      <h2 id="username"></h2>
+      <button id="logoutBtn">🚪 Chiqish</button>
+    </header>
+
+    <div id="quizBox">
+      <h3 id="questionText"></h3>
+      <div id="answers"></div>
+      <button id="nextBtn">➡️ Keyingi</button>
+    </div>
+
+    <div id="resultBox" class="hidden">
+      <h2>📊 Natijangiz:</h2>
+      <p id="scoreText"></p>
+      <button onclick="location.href='index.html'">Bosh sahifa</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

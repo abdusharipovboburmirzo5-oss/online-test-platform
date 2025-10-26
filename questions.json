@@ -1,42 +1,22 @@
 [
   {
-    "question": "HTML nimani bildiradi?",
-    "options": [
-      "HyperText Markup Language",
-      "Home Tool Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "HighText Machine Language"
-    ],
+    "question": "HTML nima?",
+    "options": ["Dasturlash tili", "Veb sahifa belgilar tili", "Brauzer", "Rasm formati"],
+    "correct": 1
+  },
+  {
+    "question": "CSS nima uchun kerak?",
+    "options": ["Sahifani bezash", "Server yaratish", "JavaScriptni yozish", "Ma’lumot saqlash"],
     "correct": 0
   },
   {
-    "question": "CSS nimaga xizmat qiladi?",
-    "options": [
-      "Veb sahifani tuzish",
-      "Veb sahifa dizaynini boshqarish",
-      "Ma'lumotlarni saqlash",
-      "Veb sahifani test qilish"
-    ],
-    "correct": 1
+    "question": "JavaScript nima qiladi?",
+    "options": ["Interaktivlik qo‘shadi", "Rasm chizadi", "Brauzerni ochadi", "Server yaratadi"],
+    "correct": 0
   },
   {
-    "question": "JavaScript nima uchun ishlatiladi?",
-    "options": [
-      "Statik dizayn",
-      "Veb sahifaga interaktivlik qo‘shish",
-      "Ma'lumotlar bazasini boshqarish",
-      "Server sozlash"
-    ],
-    "correct": 1
-  },
-  {
-    "question": "JSON fayl nima uchun kerak?",
-    "options": [
-      "Rasm saqlash",
-      "Video ko‘rsatish",
-      "Ma'lumotlarni saqlash va uzatish",
-      "Kod kompilyatsiyasi"
-    ],
-    "correct": 2
+    "question": "Git nima?",
+    "options": ["Versiyalarni boshqarish tizimi", "Brauzer", "Server tili", "Grafik dastur"],
+    "correct": 0
   }
 ]
