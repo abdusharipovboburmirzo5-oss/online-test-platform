@@ -1,99 +1,104 @@
-:root {
-  --main-color: #007bff;
-  --bg-color: #f8fafc;
-  --text-color: #333;
+:root{
+  --bg: #f6f8fb;
+  --card:#fff;
+  --text:#1f2937;
+  --accent:#0066ff;
+  --muted:#667085;
+  --danger:#e53935;
+  --success:#16a34a;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 8px 30px rgba(16,24,40,0.08);
+  --radius: 14px;
 }
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.app{display:flex;min-height:100vh}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;padding:20px;border-right:1px solid rgba(0,0,0,0.04);
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  display:flex;flex-direction:column;gap:18px;
+}
+.brand{font-size:20px;margin-bottom:6px}
+.userbox{padding:10px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));box-shadow:var(--shadow);min-height:86px;display:flex;align-items:center;gap:12px}
+.userbox img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.user-meta{font-size:14px}
+.user-meta .name{font-weight:600}
+.controls{display:flex;flex-direction:column;gap:8px}
+.controls label{font-size:12px;color:var(--muted)}
+.controls select{padding:8px;border-radius:8px;border:1px solid #e6e9ef}
+.credits{margin-top:auto;font-size:12px;color:var(--muted)}
+
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid rgba(0,0,0,0.04)}
+.topbar h1{margin:0;font-size:20px;color:var(--accent)}
+.statline{display:flex;gap:8px}
+.chip{background:var(--card);padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.03);font-size:13px}
+
+/* CONTENT */
+.content{padding:28px;display:flex;flex-direction:column;align-items:stretch;gap:18px}
+.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.center{text-align:center}
+.actions{display:flex;gap:10px;justify-content:center;margin-top:12px}
+
+/* BUTTONS */
+.btn{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost{background:transparent;color:var(--muted);border:1px dashed rgba(0,0,0,0.06)}
+.btn.small{padding:8px 10px;font-size:13px;border-radius:8px}
+.btn.danger{background:var(--danger)}
+.btn.success{background:var(--success)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+
+/* QUIZ LAYOUT */
+.quiz-wrap{display:flex;flex-direction:column;gap:18px}
+.q-head{display:flex;justify-content:space-between;align-items:center}
+.question{font-size:18px;margin:0}
+.options{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.option{padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:linear-gradient(180deg, #fff, #fbfdff);cursor:pointer;transition:all .15s}
+.option:hover{transform:translateY(-3px)}
+.option.correct{background:linear-gradient(90deg,#e6f9ec,#f0fff5);border-color:rgba(34,197,94,.8)}
+.option.wrong{background:linear-gradient(90deg,#ffecec,#fff5f5);border-color:rgba(239,68,68,.9);opacity:0.95}
+.progress{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden}
+.progress > span{display:block;height:100%;background:var(--accent);width:0;transition:width .35s}
+
+/* FOOTER */
+.footer{padding:16px;text-align:center;color:var(--muted);border-top:1px solid rgba(0,0,0,0.04)}
+
+/* MODAL */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.5);z-index:60}
+.modal.hidden{display:none}
+.modal-inner{background:var(--card);padding:18px;border-radius:14px;width:520px;max-width:95%;position:relative;box-shadow:var(--shadow)}
+.modal-close{position:absolute;right:10px;top:8px;border:none;background:transparent;font-size:22px;cursor:pointer}
+
+/* THEMES */
+body.theme-dark{
+  --bg:#0b1220;--card:#0f1724;--text:#e6eef8;--muted:#9aa7bb;--accent:#6ea8ff;
+  background:linear-gradient(180deg,#051223,#071026);
+}
+body.theme-gradient{
+  --bg:linear-gradient(180deg,#f7f6ff,#f0f7ff);--card:rgba(255,255,255,0.9);--text:#0f1724;--muted:#475569;--accent:#7c3aed;
+  background:linear-gradient(180deg,#fff7fd,#f3f8ff);
 }
 
-.app {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  width: 450px;
-  max-width: 90%;
+/* BACKGROUNDS */
+body.bg-dots .main::before{
+  content:"";position:fixed;inset:0;pointer-events:none;background-image:
+  radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);background-size:24px 24px;opacity:.6
+}
+body.bg-waves .main::before{
+  content:"";position:fixed;inset:0;pointer-events:none;background-image:
+  linear-gradient(120deg, rgba(124,58,237,0.02) 0%, rgba(16,185,129,0.02) 50%, rgba(6,182,212,0.02) 100%);
+  opacity:.9;
 }
 
-header {
-  text-align: center;
-}
-
-h1 {
-  color: var(--main-color);
-}
-
-#progress {
-  background: #eee;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 10px;
-  margin-top: 15px;
-}
-
-#progress-bar {
-  background: var(--main-color);
-  height: 10px;
-  width: 0;
-  transition: width 0.4s ease;
-}
-
-.btn {
-  background-color: var(--main-color);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.option {
-  background: #f3f6fa;
-  border: 1px solid #d0d7e1;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.option:hover {
-  background: #e6eefc;
-}
-
-.correct {
-  background-color: #b8f5c2;
-  border-color: #4caf50;
-}
-
-.wrong {
-  background-color: #f7c1c1;
-  border-color: #f44336;
-}
-
-#result {
-  text-align: center;
-  font-size: 18px;
-}
-
-footer {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 13px;
-  color: #666;
+/* RESPONSIVE */
+@media (max-width:900px){
+  .sidebar{display:none}
+  .app{flex-direction:column}
+  .main{padding:0}
 }

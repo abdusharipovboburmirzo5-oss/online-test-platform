@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧠 Onlayn Test Platformasi</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Onlayn Test Platformasi — Pro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>🧠 Onlayn Test Platformasi</h1>
-      <div id="progress">
-        <div id="progress-bar"></div>
+    <aside class="sidebar">
+      <div class="brand">🧠 <strong>TestPro</strong></div>
+
+      <div class="userbox" id="userbox">
+        <!-- Filled by JS -->
       </div>
-    </header>
 
-    <main id="quiz">
-      <button id="start-btn" class="btn">🚀 Testni boshlash</button>
+      <div class="controls">
+        <label for="theme">Tema:</label>
+        <select id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="gradient">Gradient</option>
+        </select>
+
+        <label for="bg">Fon:</label>
+        <select id="bg">
+          <option value="plain">Oddiy</option>
+          <option value="dots">Nuqtalar</option>
+          <option value="waves">To‘lqin</option>
+        </select>
+
+        <button id="profile-btn" class="btn small">Profil</button>
+        <button id="leaderboard-btn" class="btn small outline">Leaderboard</button>
+        <button id="logout-btn" class="btn small danger hidden">Chiqish</button>
+      </div>
+
+      <div class="credits">© 2025 TestPro</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1>Onlayn Test Platformasi</h1>
+        <div class="statline">
+          <div id="timer" class="chip">⏱ 00:00</div>
+          <div id="qcount" class="chip">0/0</div>
+        </div>
+      </header>
+
+      <section id="content" class="content">
+        <div id="welcome" class="card center">
+          <h2>Salom! 🖐</h2>
+          <p>Testga kirish uchun ro‘yxatdan o‘ting yoki tizimga kiring.</p>
+          <div class="actions">
+            <button id="open-register" class="btn">Roʻyxatdan o‘tish</button>
+            <button id="open-login" class="btn outline">Tizimga kirish</button>
+            <button id="guest-btn" class="btn ghost">Mehmon sifatida davom etish</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Built with ❤️ — TestPro</small>
+      </footer>
     </main>
+  </div>
 
-    <footer>
-      <p>© 2025 Onlayn Test Platformasi</p>
-    </footer>
+  <!-- MODALS -->
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-inner">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div id="modal-body"><!-- filled by JS --></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
