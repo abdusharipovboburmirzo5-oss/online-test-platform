@@ -119,8 +119,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 8px;
+  background: #222;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
+
 
 header h2 {
   font-size: 1.2rem;

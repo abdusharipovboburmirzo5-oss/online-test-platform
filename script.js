@@ -1,4 +1,4 @@
-// === AUTH (Kirish/Ro‘yxatdan o‘tish) ===
+// === RO‘YXATDAN O‘TISH / KIRISH ===
 const users = JSON.parse(localStorage.getItem("users")) || {};
 
 const loginForm = document.getElementById("loginForm");
@@ -9,13 +9,10 @@ if (loginForm) {
     e.preventDefault();
     const user = loginUser.value.trim();
     const pass = loginPass.value.trim();
-
     if (users[user] && users[user] === pass) {
       localStorage.setItem("activeUser", user);
-      location.href = "quiz.html";
-    } else {
-      alert("Login yoki parol xato!");
-    }
+      location.href = "profile.html";
+    } else alert("Login yoki parol noto‘g‘ri!");
   };
 }
 
@@ -24,32 +21,57 @@ if (registerForm) {
     e.preventDefault();
     const user = regUser.value.trim();
     const pass = regPass.value.trim();
-
-    if (!user || !pass) return alert("Maydonlar bo‘sh bo‘lmasin!");
-    if (users[user]) return alert("Bunday foydalanuvchi allaqachon mavjud!");
-
-    users[user] = pass;
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Ro‘yxatdan o‘tildi ✅! Endi tizimga kiring.");
-    registerForm.reset();
+    if (users[user]) alert("Bunday foydalanuvchi mavjud!");
+    else {
+      users[user] = pass;
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("activeUser", user);
+      alert("Ro‘yxatdan o‘tildi!");
+      location.href = "profile.html";
+    }
   };
 }
 
-// Tablarni boshqarish
 document.getElementById("loginTab")?.addEventListener("click", () => {
   loginForm.classList.remove("hidden");
   registerForm.classList.add("hidden");
-  loginTab.classList.add("active");
-  registerTab.classList.remove("active");
 });
 document.getElementById("registerTab")?.addEventListener("click", () => {
   registerForm.classList.remove("hidden");
   loginForm.classList.add("hidden");
-  registerTab.classList.add("active");
-  loginTab.classList.remove("active");
 });
 
-// === QUIZ ===
+// === PROFIL SAHIFASI ===
+if (document.body.classList.contains("profile-page")) {
+  const user = localStorage.getItem("activeUser");
+  if (!user) location.href = "index.html";
+
+  document.getElementById("username").textContent = "👤 " + user;
+  document.getElementById("nameDisplay").textContent = user;
+
+  const score = localStorage.getItem("lastScore") || "Hozircha yo‘q";
+  document.getElementById("scoreInfo").textContent = score;
+
+  const motivatsiyalar = [
+    "Hech qachon taslim bo‘lmang — katta natija sabr bilan keladi!",
+    "Bugun boshlang, erta kech bo‘lishi mumkin.",
+    "Bilim — kuch, uni to‘plang va ulashing.",
+    "Sizning harakatlaringiz kelajagingizni yaratadi."
+  ];
+  document.getElementById("motivationText").textContent =
+    motivatsiyalar[Math.floor(Math.random() * motivatsiyalar.length)];
+
+  document.getElementById("logoutBtn").onclick = () => {
+    localStorage.removeItem("activeUser");
+    location.href = "index.html";
+  };
+
+  document.getElementById("startQuizBtn").onclick = () => {
+    location.href = "quiz.html";
+  };
+}
+
+// === TEST SAHIFASI ===
 if (document.getElementById("quizBox")) {
   const user = localStorage.getItem("activeUser");
   if (!user) location.href = "index.html";
@@ -90,6 +112,7 @@ if (document.getElementById("quizBox")) {
       quizBox.classList.add("hidden");
       resultBox.classList.remove("hidden");
       scoreText.textContent = `${score} / ${questions.length} to‘g‘ri javob`;
+      localStorage.setItem("lastScore", `${score}/${questions.length}`);
     }
   };
 
@@ -100,19 +123,3 @@ if (document.getElementById("quizBox")) {
 
   loadQuestions();
 }
-// === PROFILE PAGE ===
-if (document.body.classList.contains("profile-page")) {
-  const user = localStorage.getItem("activeUser");
-  if (!user) location.href = "index.html";
-  document.getElementById("username").textContent = "👤 " + user;
-
-  const score = localStorage.getItem("lastScore") || "Hozircha yo‘q";
-  document.getElementById("userInfo").textContent = `Sizning so‘nggi test natijangiz: ${score}`;
-
-  document.getElementById("logoutBtn").onclick = () => {
-    localStorage.removeItem("activeUser");
-    location.href = "index.html";
-  };
-}
-scoreText.textContent = `${score} / ${questions.length} to‘g‘ri javob`;
-localStorage.setItem("lastScore", `${score}/${questions.length}`);

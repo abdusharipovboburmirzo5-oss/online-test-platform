@@ -5,7 +5,7 @@
   <title>Profil Sahifasi</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="profile-page">
   <div class="container profile">
     <header>
       <h2 id="username"></h2>
@@ -13,28 +13,45 @@
     </header>
 
     <section class="info-box">
-      <h3>👋 Xush kelibsiz!</h3>
-      <p id="userInfo"></p>
-      <p>Bu sahifada siz test natijalaringizni, motivatsion ma’lumotlarni va rasmlarni ko‘rishingiz mumkin.</p>
+      <h3>👋 Xush kelibsiz, <span id="nameDisplay"></span>!</h3>
+      <p>Siz hozir test platformadasiz. Quyida siz uchun turli ma’lumotlar, yangiliklar va test bo‘limlari keltirilgan.</p>
+    </section>
+
+    <section class="stats">
+      <h3>📊 Statistika</h3>
+      <ul id="userStats">
+        <li>So‘nggi test natijasi: <strong id="scoreInfo">Hozircha yo‘q</strong></li>
+        <li>Umumiy testlar soni: <strong>1</strong></li>
+        <li>Darajangiz: <strong>Yangi foydalanuvchi</strong></li>
+      </ul>
     </section>
 
     <section class="gallery">
-      <h3>🖼️ Qiziqarli rasmlar</h3>
+      <h3>🖼️ Jamoa a'zolarir</h3>
       <div class="images">
-        <img src="https://picsum.photos/seed/edu1/300/200" alt="img1">
-        <img src="https://picsum.photos/seed/edu2/300/200" alt="img2">
-        <img src="https://picsum.photos/seed/edu3/300/200" alt="img3">
+        <img src="https://picsum.photos/seed/edu1/300/200">
+        <img src="https://picsum.photos/seed/edu2/300/200">
+        <img src="https://picsum.photos/seed/edu3/300/200">
       </div>
     </section>
 
-    <section class="facts">
-      <h3>📚 Foydali ma’lumotlar</h3>
+    <section class="news">
+      <h3>📰 Yangiliklar</h3>
       <ul>
-        <li>🎓 Har kuni yangi narsa o‘rganish — muvaffaqiyat kaliti.</li>
-        <li>💡 Har bir xato — yangi tajriba.</li>
-        <li>🚀 Bilim — eng yaxshi sarmoya.</li>
+        <li>🔹 Yangi test bo‘limi qo‘shildi!</li>
+        <li>🔹 Foydalanuvchi profili endi yangilanishi mumkin.</li>
+        <li>🔹 Qorong‘i (Dark) rejim yaxshilandi.</li>
       </ul>
     </section>
+
+    <section class="motivation">
+      <h3>💡 Bugungi motivatsiya:</h3>
+      <blockquote id="motivationText"></blockquote>
+    </section>
+
+    <div class="bottom">
+      <button id="startQuizBtn">🧠 Testni boshlash</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
