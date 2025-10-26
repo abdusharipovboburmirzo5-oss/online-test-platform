@@ -1,26 +1,42 @@
 [
   {
-    "question": "HTML nima uchun ishlatiladi?",
-    "options": ["Veb-sahifa tuzish", "Dastur kompilyatsiyasi", "Tarmoq sozlamalari", "Grafik montaj"],
-    "correct": 0,
-    "timeSec": 30
+    "question": "HTML nimani bildiradi?",
+    "options": [
+      "HyperText Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "HighText Machine Language"
+    ],
+    "correct": 0
   },
   {
-    "question": "CSS yordamida nima boshqariladi?",
-    "options": ["Ma'lumotlar", "Dizayn va uslub", "Server funksiyalari", "Fayl saqlash"],
-    "correct": 1,
-    "timeSec": 30
+    "question": "CSS nimaga xizmat qiladi?",
+    "options": [
+      "Veb sahifani tuzish",
+      "Veb sahifa dizaynini boshqarish",
+      "Ma'lumotlarni saqlash",
+      "Veb sahifani test qilish"
+    ],
+    "correct": 1
   },
   {
-    "question": "JavaScript qaysi vazifani bajaradi?",
-    "options": ["Statik sahifa", "Interaktivlik va dinamiklik", "Web-server", "DB yaratish"],
-    "correct": 1,
-    "timeSec": 40
+    "question": "JavaScript nima uchun ishlatiladi?",
+    "options": [
+      "Statik dizayn",
+      "Veb sahifaga interaktivlik qo‘shish",
+      "Ma'lumotlar bazasini boshqarish",
+      "Server sozlash"
+    ],
+    "correct": 1
   },
   {
-    "question": "JSON formati nima uchun mos?",
-    "options": ["Rasmlar uchun", "Ma'lumotlarni almashish uchun", "Video tahrirlash", "Matematik hisoblash"],
-    "correct": 1,
-    "timeSec": 25
+    "question": "JSON fayl nima uchun kerak?",
+    "options": [
+      "Rasm saqlash",
+      "Video ko‘rsatish",
+      "Ma'lumotlarni saqlash va uzatish",
+      "Kod kompilyatsiyasi"
+    ],
+    "correct": 2
   }
 ]
