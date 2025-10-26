@@ -263,3 +263,44 @@ header h2 {
     font-size: 0.95rem;
   }
 }
+/* === Profil sahifasi === */
+.profile .info-box, .profile .gallery, .profile .facts {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.1);
+}
+
+.profile h3 {
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+.images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.images img {
+  width: 30%;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+.facts ul {
+  list-style: none;
+}
+
+.facts li {
+  padding: 6px 0;
+  border-bottom: 1px solid #222;
+}

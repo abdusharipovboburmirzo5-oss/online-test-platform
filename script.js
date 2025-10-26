@@ -100,3 +100,19 @@ if (document.getElementById("quizBox")) {
 
   loadQuestions();
 }
+// === PROFILE PAGE ===
+if (document.body.classList.contains("profile-page")) {
+  const user = localStorage.getItem("activeUser");
+  if (!user) location.href = "index.html";
+  document.getElementById("username").textContent = "👤 " + user;
+
+  const score = localStorage.getItem("lastScore") || "Hozircha yo‘q";
+  document.getElementById("userInfo").textContent = `Sizning so‘nggi test natijangiz: ${score}`;
+
+  document.getElementById("logoutBtn").onclick = () => {
+    localStorage.removeItem("activeUser");
+    location.href = "index.html";
+  };
+}
+scoreText.textContent = `${score} / ${questions.length} to‘g‘ri javob`;
+localStorage.setItem("lastScore", `${score}/${questions.length}`);
