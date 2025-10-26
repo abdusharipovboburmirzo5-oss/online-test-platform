@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TestPro — Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="tb-left">
+      <button id="logo-home" class="btn small ghost">🏠 TestPro</button>
+      <div id="user-badge" class="badge">—</div>
+    </div>
+    <div class="tb-right">
+      <button id="theme-toggle" class="btn small">🌙</button>
+      <button id="logout" class="btn small danger">Chiqish</button>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="card" id="start-card">
+      <h2 id="greet">Salom!</h2>
+      <p id="greet-desc">Testni boshlash uchun <strong>Start</strong> tugmasini bosing. Testni faqat tizimga kirgan foydalanuvchi boshlashi mumkin.</p>
+      <div class="row center">
+        <button id="start-btn" class="btn big">Start</button>
+        <button id="manage-btn" class="btn outline">Savollar</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="quiz-card">
+      <div class="quiz-head">
+        <div id="qpos">1 / 1</div>
+        <div class="progress"><div id="progress-bar"></div></div>
+        <div id="timer">⏱ 00:00</div>
+      </div>
+
+      <div id="question-area" class="question-area">
+        <!-- injected by JS -->
+      </div>
+
+      <div class="quiz-controls">
+        <button id="prev-btn" class="btn outline">Oldingi</button>
+        <button id="next-btn" class="btn">Keyingi</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for question manager -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-inner card">
+      <button id="modal-close" class="modal-close">×</button>
+      <h3>Savollar (JSON)</h3>
+      <textarea id="questions-text" rows="10" placeholder='[{"question":"...","options":["a","b"],"correct":0,"timeSec":30}]'></textarea>
+      <div class="row">
+        <button id="import-btn" class="btn">Import</button>
+        <button id="modal-cancel" class="btn outline">Bekor</button>
+      </div>
+      <p class="muted">Bu sahifa faqat localStoragega savollar import qiladi — backend yo‘q.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
