@@ -5,26 +5,32 @@
   <title>Quiz Platforma</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container auth">
-    <h1>🧠 Quiz Platforma</h1>
-
-    <div class="tabs">
-      <button id="loginTab" class="active">Kirish</button>
-      <button id="registerTab">Ro‘yxatdan o‘tish</button>
+<body class="dark-bg">
+  <div class="auth-container">
+    <div class="illustration">
+      <img src="boy-walking.gif" alt="Animated boy">
     </div>
 
-    <form id="loginForm">
-      <input type="text" id="loginUser" placeholder="Foydalanuvchi nomi" required>
-      <input type="password" id="loginPass" placeholder="Parol" required>
-      <button type="submit">Kirish</button>
-    </form>
+    <div class="form-box">
+      <h1>🧠 Quiz Platforma</h1>
 
-    <form id="registerForm" class="hidden">
-      <input type="text" id="regUser" placeholder="Yangi foydalanuvchi" required>
-      <input type="password" id="regPass" placeholder="Parol" required>
-      <button type="submit">Ro‘yxatdan o‘tish</button>
-    </form>
+      <div class="tabs">
+        <button id="loginTab" class="active">Kirish</button>
+        <button id="registerTab">Ro‘yxatdan o‘tish</button>
+      </div>
+
+      <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="Foydalanuvchi nomi" required>
+        <input type="password" id="loginPass" placeholder="Parol" required>
+        <button type="submit">Kirish</button>
+      </form>
+
+      <form id="registerForm" class="hidden">
+        <input type="text" id="regUser" placeholder="Yangi foydalanuvchi nomi" required>
+        <input type="password" id="regPass" placeholder="Parol" required>
+        <button type="submit">Ro‘yxatdan o‘tish</button>
+      </form>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -309,3 +309,105 @@ header h2 {
   padding: 6px 0;
   border-bottom: 1px solid #222;
 }
+body.dark-bg {
+  background: radial-gradient(circle at top, #0d0d0d, #000);
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 60px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.illustration img {
+  width: 280px;
+  animation: walk 3s infinite linear alternate;
+}
+
+@keyframes walk {
+  0% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+  100% { transform: translateY(0) rotate(2deg); }
+}
+
+.form-box {
+  width: 300px;
+  text-align: center;
+}
+
+.form-box h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00ffcc;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  border-color: #00ffcc;
+  color: #00ffcc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #1a1a1a;
+  color: white;
+}
+
+button[type="submit"] {
+  background: #00ffcc;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #00e0aa;
+}
+
+.hidden {
+  display: none;
+}
